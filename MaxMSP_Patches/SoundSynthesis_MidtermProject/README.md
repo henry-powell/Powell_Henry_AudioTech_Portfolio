@@ -2,7 +2,7 @@
 
 This Max/MSP patch implements a dual‑tone synthesizer with selectable engines, ADSR envelope shaping, and a rhythmic trigger at 120 BPM (two notes per second). It is designed to avoid clicks between successive notes and to take the fundamental frequency from a **K‑slider**.
 
-## ✨ Features
+##  Features
 - **Additive Synth (Odd Harmonics):** Sub‑patch that sums the first **five odd harmonics** of a fundamental.
 - **Bell‑Like Synth:** Sub‑patch with two partials: **fundamental** and **fundamental × 1.414**.
 - **Engine Selector (Radio Group):** Choose which sub‑patch (Additive or Bell) is active.
@@ -15,54 +15,31 @@ This Max/MSP patch implements a dual‑tone synthesizer with selectable engines,
 - **K‑Slider Input:** Fundamental frequency comes from a **K‑slider** UI object.
 - **Tempo System:** Triggers at **120 BPM** (2 Hz).
 
-## 📁 Files
+##  Files
 - `SoundSynthesis_MidtermProject.maxpat` — main patch
 - `img/screenshot.png` — (optional) screenshot of the patch
 - `audio/demo.mp3` — (optional) short demo clip (<10 MB)
 
-> Place this README in the same folder as your patch. If you keep images/audio, use the `img/` and `audio/` subfolders as shown above.
-
-## ▶️ How to Use
+##  How to Use
 1. **Open** `SoundSynthesis_MidtermProject.maxpat` in Max.
 2. **Set fundamental** with the **K‑slider**.
 3. Use the **radio group** to choose **Additive** or **Bell** engine.
 4. **Start the trigger** (120 BPM) and listen.
 5. Adjust ADSR parameters if you made them external; defaults are baked in to meet the spec.
 
-## 🔧 Implementation Notes
+##  Implementation Notes
 - **Additive sub‑patch:** sums partials at frequencies `f * {1, 3, 5, 7, 9}` with appropriate amplitude scaling to avoid clipping.
 - **Bell sub‑patch:** two sine partials at `f` and `f × 1.414` (≈ √2), mixed and sent through the same ADSR.
 - **Envelope:** ADSR is applied to signal domain (e.g., `line~`/`function`/`adsr~` approach) to ensure smooth ramps and **no clicks**.
 - **120 BPM:** Use `[metro 500]` (ms) → triggers every 500 ms; 120 BPM = 60,000 ms / 120 = **500 ms**.
 - **Gain staging:** final output scaled to prevent clipping; monitor with `meter~` if included.
 
-## 🖼️ Screenshot (optional, recommended)
+##  Screenshot
 - On macOS press **Shift–⌘–4** to capture a region, or **Shift–⌘–5** for window capture.
 - Save as `img/screenshot.png` so GitHub shows it in the folder.
 - For a clean look: **Lock** the patcher and (optionally) enable **Presentation Mode** before capturing.
 
-## 📦 Folder Layout Example
-```
-MaxMSP_Patches/
-  SoundSynthesis_Midterm/
-    SoundSynthesis_MidtermProject.maxpat
-    README.md
-    img/
-      screenshot.png
-    audio/
-      demo.mp3   (optional)
-```
-
-## 📝 Git Tips
-- Commit message example:
-  - `Add Sound Synthesis midterm: dual‑tone Max patch with ADSR and 120 BPM trigger`
-- If your repo ignores audio by default, allow small demos by adding to `.gitignore` exceptions (optional):
-  ```gitignore
-  # allow small audio demos for this project
-  !MaxMSP_Patches/SoundSynthesis_Midterm/audio/**
-  ```
-
-## ✅ Requirements
+##  Requirements
 - **Max 8+**
 - Basic MIDI/audio interface settings configured in Max
 
