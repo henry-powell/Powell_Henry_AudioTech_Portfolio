@@ -47,5 +47,6 @@ Thumbs.db
 .vscode/
 *.swp
 *.swo
-# allow audio demos for this project
-!MaxMSP_Patches/SoundSynthesis_Midterm/audio/**
+# allow audio demos for this specific project
+!MaxMSP_Patches/SoundSynthesis_Midterm/audio/*.mp3
+!MaxMSP_Patches/SoundSynthesis_Midterm/audio/*.wav
