@@ -19,7 +19,7 @@
 /bin/
 /obj/
 *.o
-*.obj
+*.obj/
 *.pdb
 *.exe
 *.dll
@@ -40,6 +40,7 @@ cmake_install.cmake
 *.flac
 
 # --- OS / Editor junk ---
+# Ensure macOS and editor files are ignored
 .DS_Store
 Thumbs.db
 .idea/
