@@ -1,0 +1,48 @@
+# --- MATLAB ---
+*.asv
+*.m~
+*.mex*
+*.mat
+*.fig
+
+# --- Max/MSP ---
+*.maxbackup
+*.mxo
+*.mxs
+*.mxe
+*.~*
+/MaxMSP_Patches/_backup/
+/MaxMSP_Patches/_build/
+
+# --- C++ / Build Artifacts ---
+/build/
+/bin/
+/obj/
+*.o
+*.obj
+*.pdb
+*.exe
+*.dll
+*.lib
+*.exp
+*.so
+*.dylib
+CMakeFiles/
+CMakeCache.txt
+Makefile
+cmake_install.cmake
+
+# --- Audio Exports (ignore big files) ---
+*.wav
+*.aiff
+*.aif
+*.mp3
+*.flac
+
+# --- OS / Editor junk ---
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
+*.swo
